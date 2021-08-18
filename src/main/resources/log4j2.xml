@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <File name="ErrorFile" fileName="logs/errors.log"
+              append="false">
+            <PatternLayout
+                    pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </File>
+
+        <File name="InfoFile" fileName="logs/application.log"
+              append="false">
+            <PatternLayout
+                    pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="InfoFile" />
+            <AppenderRef ref="ErrorFile" level="error" />
+        </Root>
+    </Loggers>
+</Configuration>
